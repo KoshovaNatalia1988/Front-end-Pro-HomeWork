@@ -48,3 +48,12 @@ function assignObjects(ob1, ob2) {
 }
 assignObjects(obj1, obj2);
 assignObjects(obj3, obj4);
+//---------------------------------
+function assignObjects() {
+    var newObj = {};
+    for (var i = 0; i < arguments.length; i++) {
+        Object.assign(newObj, arguments[i]);
+    }
+    console.log(newObj);
+}
+assignObjects(obj1, obj2, obj3, obj4,obj5, obj6);
