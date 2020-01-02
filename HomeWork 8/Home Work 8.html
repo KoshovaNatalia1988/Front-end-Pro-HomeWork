@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function initSlider(size) {
+            var num = 0;
+            return {
+                up: function() {
+                    if(num == size) {
+                        num = 1;
+                    } else {
+                        num++;
+                    }
+                    return console.log(num);
+                },
+                down: function() {
+                    if(num == 1) {
+                        num = size;
+                    } else {
+                        num--;
+                    }
+                    return console.log(num);
+                }
+            }
+        }
+        var slider = initSlider(5);
+        slider.up();
+        slider.up();
+        slider.up();
+        slider.up();
+        slider.up();
+        slider.up();
+        slider.down();
+        slider.down();
+        slider.down();
+        slider.down();
+        slider.down();
+    </script>
+</body>
+</html>
