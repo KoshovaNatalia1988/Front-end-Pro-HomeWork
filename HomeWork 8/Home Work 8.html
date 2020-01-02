@@ -26,6 +26,17 @@
                         num--;
                     }
                     return console.log(num);
+                },
+                reset: function() {
+                    num = 1;
+                    return console.log(num);
+                },
+                set: function(value) {
+                    if(value > 0 && value <= size) {
+                        console.log(value);
+                    } else {
+                        console.log('Error')
+                    }
                 }
             }
         }
@@ -41,6 +52,10 @@
         slider.down();
         slider.down();
         slider.down();
+        slider.reset();
+        slider.set(10);
+        slider.set(5);
+        slider.set(0);
     </script>
 </body>
 </html>
