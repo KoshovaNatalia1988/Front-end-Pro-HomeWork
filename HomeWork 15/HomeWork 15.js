@@ -38,6 +38,7 @@ window.onload = function() {
         var span = document.createElement('span');
         span.classList.add('button');
         span.innerHTML = items[i].title;
+        span.onclick = actions[items[i].handler];
         container.append(span);
     }
     document.querySelector('body').append(container); 
