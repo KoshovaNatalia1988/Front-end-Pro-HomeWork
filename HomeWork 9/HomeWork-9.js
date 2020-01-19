@@ -39,6 +39,20 @@ function modification_Str(str) {
 };
 var result = modification_Str(newStr);
 console.log(result);
+///////////////////////////////////////////
+var mass = ['sjhfnaof', 'affooasf', 'dfhdfhdfh'];
+var elemntStr = 'foo';
+function inArray(str, arr) {
+    for(var i = 0; i < mass.length; i++) {
+       if(arr[i].indexOf(str) !== -1 ) {
+           console.log('Строка, где найдено совпадение = ',arr[i]);
+            return true;
+        }
+    }
+    return false;
+  }
+  var res = inArray(elemntStr,mass);
+  console.log(res);
 
 
 
