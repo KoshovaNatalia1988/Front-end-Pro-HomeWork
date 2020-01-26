@@ -31,9 +31,26 @@
             }
             document.write('<br />');
         }
+        SuperArray.prototype.clear = function(direction, k) { 
+            if(direction == 'row') {
+                for(var i = 0; i < this.arr.length; i++){
+                    for(var j = 0; j < this.arr[i].length; j++){
+                        this.arr[k][j] = 0;
+                    }
+                } 
+            } else if(direction == 'column') {
+                for(var i = 0; i < this.arr.length; i++){
+                    for(var j = 0; j < this.arr[i].length; j++){
+                        this.arr[i][k] = 0;
+                    }
+                } 
+            }
+        }
         var array = new SuperArray(6,9,{ min: 10, max: 55 });
         console.log(array);
         array.render('*');
+        array.clear('row', 3);
+        array.clear('column', 8);
     </script>
 </head>
 <body>
