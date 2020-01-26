@@ -18,8 +18,22 @@
             }
             this.arr = arr;
         }
+        SuperArray.prototype.render = function(separator){
+            var separator = separator || '-';
+            for(var i = 0; i < this.arr.length; i++){
+                for(var j = 0; j < this.arr[i].length; j++){
+                    document.write(this.arr[i][j] + ' ');
+                }
+                document.write('<br />');
+            }
+            for(var k = 0; k < 30; k++){
+                document.write(separator);
+            }
+            document.write('<br />');
+        }
         var array = new SuperArray(6,9,{ min: 10, max: 55 });
         console.log(array);
+        array.render('*');
     </script>
 </head>
 <body>
