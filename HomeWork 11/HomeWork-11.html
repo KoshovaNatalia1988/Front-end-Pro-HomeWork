@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function SuperMath(obj) {
+            this.input = function() {
+                x = +prompt('Введите значение x = ');
+                console.log(x, 'x');
+                y = +prompt('Введите значение y = ');
+                console.log(y, 'y');
+                znak = prompt('Введите значение znak = ');
+                console.log(znak, 'znak');
+                if (znak == '+' || znak == '-' || znak == '*' || znak == '/' || znak == '%') {
+                    return this.calculator();
+                } else {     
+                    return console.log('znak',' ',znak,' ','incorrect');
+                }
+            }
+        }
+        SuperMath.prototype.calculator = function() {
+            if (znak == '+') {
+                return console.log('res = ', x + y);
+            } else if (znak == '-') {
+                return console.log('res = ', x - y); 
+            } else if (znak == '*') {
+                return console.log('res = ',x * y);
+            } else if (znak == '/') {
+                return console.log('res = ', x / y);
+            } else if (znak == '%') {
+                return console.log('res = ',x % y);
+            }
+        }
+        SuperMath.prototype.check = function(obj) {
+            x = obj.x;
+            y = obj.y;
+            znak = obj.znak;
+            var objMath = confirm("Вы хотите выполнить действие: " + x + " " + znak + " " + y + "?");
+            if (objMath == true) {
+                return this.calculator();
+            } else {
+                return this.input();
+            }
+        }
+        obj = {
+            x: 12,
+            y: 3,
+            znak: "/"
+        }
+        var p = new SuperMath(obj);
+        p.check(obj);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
